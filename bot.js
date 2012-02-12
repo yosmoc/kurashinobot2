@@ -30,14 +30,12 @@ function Bot() {
 
 Bot.prototype = {
     say: function() {
-        var hint = this.db.hint_queue.shift();
-        // this.bot.verifyCredentials(function (data) {
-        //     sys.puts(sys.inspect(data));
-        // }).updateStatus(hint.hint, function(data) {
-        //     sys.puts(sys.inspect(data));
-        // });
-        this.bot.updateStatus(hint.hint, function(data) {
-             sys.puts(sys.inspect(data));
+        var hint = "「" + this.db.hint_queue.shift().hint +"」" ;
+
+        this.bot.verifyCredentials(function (data) {
+            sys.puts(sys.inspect(data));
+        }).updateStatus(hint, function(data) {
+            sys.puts(sys.inspect(data));
         });
 
         this.db.insert_queue_random();
@@ -46,12 +44,12 @@ Bot.prototype = {
 
 
 var kurashinobot = new Bot();
-// cronJob('0 0 7,12,22 * * *', function(){
-//     console.log('You will see this message every second');
-// });
-
-cronJob('* * * * * *', function(){
+cronJob('0 0 7,12,22 * * *', function(){
     kurashinobot.say();
 });
+
+// cronJob('* * * * * *', function(){
+//     kurashinobot.say();
+// });
 
 process.on('SIGINT', function() { kurashinobot.db.disconnect(); });
