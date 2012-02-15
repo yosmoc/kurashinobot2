@@ -1,3 +1,3 @@
 task :cron do
-  sh "node crawler.js"
+  sh "node ex/crawler.js"
 end
