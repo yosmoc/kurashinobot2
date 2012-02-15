@@ -12,7 +12,8 @@ var http = require('http'),
 
 function Crawler() {
     this.url = "http://www.kurashi-no-techo.co.jp/";
-    this.db = new DB(path.resolve() + '/db/kurashi_no_hint');
+    var db_url = process.env.MONGOHQ_URL || path.resolve() + '/db/kurashi_no_hint';
+    this.db = new DB(db_url);
 }
 
 Crawler.prototype = {
