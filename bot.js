@@ -38,16 +38,13 @@ Bot.prototype = {
 
 
 var kurashinobot = new Bot();
-// cronJob('0 0 7,12,22 * * *', function(){
-//    kurashinobot.say();
-// });
-
-cronJob('01 * * * * *', function(){
-   kurashinobot.say();
+cronJob('0 0 7,12,22 * * *', function(){
+    kurashinobot.say();
 });
 
-// cronJob('* * * * * *', function(){
-//     kurashinobot.say();
+// for debug
+// cronJob('01 * * * * *', function(){
+//    kurashinobot.say();
 // });
 
 process.on('SIGINT', function() { kurashinobot.db.disconnect()});
