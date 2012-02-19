@@ -7,7 +7,7 @@ var fs = require('fs'),
 
 function Text2DB() {
     this.db = new DB(path.resolve('../db/') + '/kurashi_no_hint');
-    this.text = fs.readFileSync("kurashi_no_hinto.txt").toString().split('\n');
+    this.text = fs.readFileSync(path.resolve() + '/ex/kurashi_no_hinto.txt').toString().split('\n');
 }
 
 Text2DB.prototype = {
