@@ -2,6 +2,7 @@
   "name": "kurashinobot2",
   "version": "0.0.1",
   "dependencies": {
+      "express": "latest",
       "cron": "latest",
       "jsdom": "latest",
       "mongoose": "latest",
