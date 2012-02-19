@@ -36,8 +36,12 @@ Bot.prototype = {
 
 
 var kurashinobot = new Bot();
-cronJob('0 0 7,12,22 * * *', function(){
-    kurashinobot.say();
+// cronJob('0 0 7,12,22 * * *', function(){
+//    kurashinobot.say();
+// });
+
+cronJob('0 1 * * * *', function(){
+   kurashinobot.say();
 });
 
 // cronJob('* * * * * *', function(){
