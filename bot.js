@@ -50,7 +50,7 @@ cronJob('01 * * * * *', function(){
 //     kurashinobot.say();
 // });
 
-process.on('SIGINT', function() { kurashinobot.db.disconnect(); });
+process.on('SIGINT', function() { kurashinobot.db.disconnect()});
 
 // dummy application
 var app = express.createServer();
@@ -59,8 +59,5 @@ app.get('/', function(req, res) {
     res.send('Hello world');
 });
 
-console.log(process.env.PORT);
-var port = process.env.PORT || 3000;
-app.listen(port, function(){
-  console.log("Listening on " + port);
-});
+var port = process.env.PORT || 9000;
+app.listen(port);
