@@ -40,7 +40,7 @@ var kurashinobot = new Bot();
 //    kurashinobot.say();
 // });
 
-cronJob('0 1 * * * *', function(){
+cronJob('01 * * * * *', function(){
    kurashinobot.say();
 });
 
