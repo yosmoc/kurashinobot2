@@ -53,8 +53,13 @@ Crawler.prototype = {
     }
 }
 
-var crawler = new Crawler();
-for (var i = 0; i < 100; i++) {
-    crawler.run();
+if (new Date().getDate() == 25) {
+    var crawler = new Crawler();
+
+    for (var i = 0; i < 100; i++) {
+        crawler.run();
+    }
+} else {
+    return;
 }
 process.on('SIGINT', function() { crawler.db.disconnect(); });
