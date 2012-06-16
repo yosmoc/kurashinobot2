@@ -18,21 +18,17 @@ function Bot() {
         access_token_key: process.env.ACCESS_TOKEN_KEY,
         access_token_secret: process.env.ACCESS_TOKEN_SECRET
     });
-
-    this.db.queue_initialize();
 }
 
 Bot.prototype = {
     say: function() {
-        var hint = "「" + this.db.hint_queue.shift().hint +"」" ;
+        var hint = "「" + this.db.fetch_hint_random() +"」";
 
         this.bot.verifyCredentials(function (data) {
             sys.puts(sys.inspect(data));
         }).updateStatus(hint, function(data) {
             sys.puts(sys.inspect(data));
         });
-
-        this.db.insert_queue_random();
     }
 }
 
