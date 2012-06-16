@@ -29,12 +29,12 @@ Crawler.prototype = {
                 self.run();
                 return;
             } else {
-                self.parseBody(body);
+                self.parse_body(body);
             }
         })
     },
 
-    parseBody: function (body) {
+    parse_body: function (body) {
         var self = this;
         jsdom.env({
             html: body,
