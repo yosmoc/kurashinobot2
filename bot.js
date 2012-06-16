@@ -22,12 +22,14 @@ function Bot() {
 
 Bot.prototype = {
     say: function() {
-        var hint = "「" + this.db.fetch_hint_random() +"」";
+        var self = this;
 
-        this.bot.verifyCredentials(function (data) {
-            sys.puts(sys.inspect(data));
-        }).updateStatus(hint, function(data) {
-            sys.puts(sys.inspect(data));
+        self.db.fetch_hint_random(function(hint){
+            self.bot.verifyCredentials(function (data) {
+                sys.puts(sys.inspect(data));
+            }).updateStatus(hint, function(data) {
+                sys.puts(sys.inspect(data));
+            });
         });
     }
 }
