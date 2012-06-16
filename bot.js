@@ -25,6 +25,7 @@ Bot.prototype = {
         var self = this;
 
         self.db.fetch_hint_random(function(hint){
+            var hint = "「" + hint.hint + "」";
             self.bot.verifyCredentials(function (data) {
                 sys.puts(sys.inspect(data));
             }).updateStatus(hint, function(data) {
