@@ -39,14 +39,14 @@ Bot.prototype = {
 var kurashinobot = new Bot();
 // kurashinobot.say();
 
-// new cronJob('00 00 3,7,12,22 * * *', function(){
-//     kurashinobot.say();
-// });
+new cronJob('00 00 3,7,12,22 * * *', function(){
+    kurashinobot.say();
+}, true, "America/Los_Angeles");
 
 // for debug
-new cronJob('01 * * * * *', function(){
-   kurashinobot.say();
-}, true, "America/Los_Angeles");
+// new cronJob('01 * * * * *', function(){
+//    kurashinobot.say();
+// }, true, "America/Los_Angeles");
 
 process.on('SIGINT', function() { kurashinobot.db.disconnect()});
 
