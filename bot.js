@@ -44,7 +44,7 @@ kurashinobot.say();
 // });
 
 // for debug
-cronJob('01 * * * * *', function(){
+new cronJob('01 * * * * *', function(){
    kurashinobot.say();
 });
 
