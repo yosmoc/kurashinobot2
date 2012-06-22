@@ -37,7 +37,7 @@ Bot.prototype = {
 
 
 var kurashinobot = new Bot();
-kurashinobot.say();
+// kurashinobot.say();
 
 // new cronJob('00 00 3,7,12,22 * * *', function(){
 //     kurashinobot.say();
