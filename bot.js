@@ -46,7 +46,7 @@ var kurashinobot = new Bot();
 // for debug
 new cronJob('01 * * * * *', function(){
    kurashinobot.say();
-});
+}, true, "America/Los_Angeles");
 
 process.on('SIGINT', function() { kurashinobot.db.disconnect()});
 
