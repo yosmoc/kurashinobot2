@@ -6,7 +6,6 @@ var path = require('path'),
     DB = require('./lib/DB').DB,
     cronJob = require('cron').CronJob,
     twitter = require('twitter'),
-//    express = require('express'),
     undefined;
 
 function Bot() {
@@ -49,13 +48,3 @@ new cronJob('00 00 3,7,12,22 * * *', function(){
 // }, true, "America/Los_Angeles");
 
 process.on('SIGINT', function() { kurashinobot.db.disconnect()});
-
-// dummy application
-// var app = express.createServer();
-
-// app.get('/', function(req, res) {
-//     res.send('Hello world');
-// });
-
-// var port = process.env.PORT || 9000;
-// app.listen(port);
