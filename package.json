@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "engines": {"node": "0.6.8"},
   "dependencies": {
-      "express": "latest",
-      "cron": "latest",
-      "jsdom": "latest",
-      "mongoose": "latest",
-      "request": "latest",
-      "twitter": "latest"
+      "cron": "1.0.1",
+      "jsdom": "0.6.0",
+      "mongoose": "3.6.8",
+      "request": "2.21.0",
+      "twitter": "0.1.18"
   }
 }
